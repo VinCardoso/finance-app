@@ -1,8 +1,8 @@
 <template>
     <div>
-        <h1>{{ transaction.title }}</h1>
-        <h3>{{ transaction.userId }}</h3>
-        <p>{{ transaction.body }}</p>
+        <h1>{{ transaction.description }}</h1>
+        <h3>R$ {{ transaction.value }}</h3>
+        <p>{{ transaction.date }}</p>
     </div>
 </template>
 
@@ -10,7 +10,7 @@
 export default {
     computed: {
         transaction(){
-            return this.$store.state.transactions.find(transaction => transaction.id == this.$route.params.id) || {}
+            return this.$store.state.transactions.find(transaction => transaction._id == this.$route.params.id) || {}
         }
     },
 }

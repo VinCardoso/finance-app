@@ -16,22 +16,13 @@
   </div>
 </template>
 
-
 <script>
-import Api from '@/services/api';
 
 export default {
   name: "home",
   components: {},
-  mounted() {
-    Api().get('/transaction/list').then((response)=> {
-      this.transactions = response.data;
-    })
-  },
-  data() {
-    return{
-      transactions: []
-    }
+  computed:{
+    transactions() { return this.$store.state.transactions }
   }
 };
 </script>

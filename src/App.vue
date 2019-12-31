@@ -10,8 +10,8 @@
 <script>
 export default {
   mounted() {
-        this.$store.dispatch('loadTransactions');
-    }
+    this.$store.dispatch('loadTransactions');
+  },
 }
 </script>
 <style lang="scss">
